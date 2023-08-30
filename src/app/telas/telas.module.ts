@@ -5,6 +5,8 @@ import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.co
 import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
 import { ListaImovelComponent } from './lista-imovel/lista-imovel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbDropdown, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -18,7 +20,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
   ]
 })
 export class TelasModule { }

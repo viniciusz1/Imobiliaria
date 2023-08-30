@@ -1,180 +1,247 @@
-<form formGroupName="imovelForm" class="container">
+
+<form [formGroup]="imovelForm" class="container">
   <div class="row">
-    <h3>RESPONSÁVEL</h3>
-    <div class="col-6">
-      <input formGroupName="imovelForm" type="text" class="form-control" placeholder="Proprietário" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <h5 class="h5">RESPONSÁVEL</h5>
+    <div class="col-md-6 col-sm-12">
+      <label for="proprietario" class="form-label">Proprietário</label>
+      <input formControlName="proprietario" id="proprietario" type="text" class="form-control"
+        placeholder="Proprietário" />
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Corretor" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-6 col-sm-12">
+      <label for="corretor" class="form-label">Corretor</label>
+      <input formControlName="corretor" id="corretor" type="text" class="form-control" placeholder="Corretor" />
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <h5 class="h5">INFORMAÇÕES</h5>
+    <div class="col-md-4 col-sm-12">
+      <label for="id" class="form-label">Código Ref.</label>
+      <input formControlName="id" id="id" type="text" class="form-control" placeholder="Código Ref."
+        aria-label="Código Ref." />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="finalidade" class="form-label">Finalidade</label>
+      <input formControlName="finalidade" id="finalidade" type="text" class="form-control" placeholder="Finalidade" />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="tipoImovel" class="form-label">Tipo Imóvel</label>
+      <input formControlName="tipoImovel" id="tipoImovel" type="text" class="form-control" placeholder="Tipo Imóvel"
+        aria-label="Tipo Imóvel" />
+    </div>
+  </div>
+  <hr>
+  <div class="row" formGroupName="localizacao">
+    <h5 class="h5">LOCALIZAÇÃO</h5>
+    <!-- <div class="col-md-6 col-sm-12">
+      <label for="visibilidade" class="form-label">Visilidade</label>
+      <input formControlName="visibilidade" id="visibilidade"  type="text" class="form-control" placeholder="Visilidade" />
+    </div> -->
+    <div class="col-md-6 col-sm-12">
+      <label for="cep" class="form-label">CEP</label>
+      <input (change)="buscarInfoCEP(cep.value)" #cep  formControlName="cep" id="cep" type="text" class="form-control" placeholder="CEP" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input formControlName="logradouro" id="logradouro" type="text" class="form-control" placeholder="Logradouro" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="numero" class="form-label">Número</label>
+      <input formControlName="numero" id="numero" type="text" class="form-control" placeholder="Número" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input formControlName="complemento" id="complemento" type="text" class="form-control"
+        placeholder="Complemento" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="estado" class="form-label">Estado</label>
+      <input formControlName="estado" id="estado" type="text" class="form-control" placeholder="Estado" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input formControlName="cidade" id="cidade" type="text" class="form-control" placeholder="Cidade" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input formControlName="bairro" id="bairro" type="text" class="form-control" placeholder="Bairro" />
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <h5 class="h5">VALORES</h5>
+    <div class="col-md-4 col-sm-12">
+      <label for="valor" class="form-label">Valor do imóvel</label>
+      <input formControlName="valor" id="valor" type="text" class="form-control" placeholder="Valor do imóvel"
+        aria-label="Valor do imóvel" />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="iptu" class="form-label">IPTU</label>
+      <input formControlName="iptu" id="iptu" type="text" class="form-control" placeholder="IPTU" aria-label="IPTU" />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="condominio" class="form-label">Condomínio</label>
+      <input formControlName="condominio" id="condominio" type="text" class="form-control" placeholder="Condomínio"
+        aria-label="Condomínio" />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="taxas" class="form-label">Taxas</label>
+      <input formControlName="taxas" id="taxas" type="text" class="form-control" placeholder="Taxas"
+        aria-label="Taxas" />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="observacaoValor" class="form-label">Observação sobre valores</label>
+      <input formControlName="observacaoValor" id="observacaoValor" type="text" class="form-control"
+        placeholder="Observação sobre valores" aria-label="Observação sobre valores" />
     </div>
   </div>
 
+  <hr>
   <div class="row">
-    <h3>INFORMAÇÕES</h3>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Código Ref." aria-label="Código Ref."
-        aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Finalidade" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Tipo Imóvel" aria-label="Tipo Imóvel"
-          aria-describedby="basic-addon2" />
+    <h5 class="h5">MEDIDAS</h5>
+    <div class="col-md-4 col-sm-12">
+      <label for="areaTotal" class="form-label">Área Total</label>
+      <div class="input-group">
+        <input formControlName="areaTotal" id="areaTotal" type="text" class="form-control"
+          aria-label="Text input with dropdown button">
+        <select formControlName="medidaAreaTotal" class="btn btn-outline-secondary dropdown-toggle" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+        </select>
+       
       </div>
     </div>
-  </div>
-  <div class="row">
-    <h3>LOCALIZAÇÃO</h3>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Visilidade" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="areaUtil" class="form-label">Área Útil</label>
+      <div class="input-group">
+        <input formControlName="areaUtil" id="areaUtil" type="text" class="form-control"
+          aria-label="Text input with dropdown button">
+        <select formControlName="medidaAreaUtil" class="btn btn-outline-secondary dropdown-toggle" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">Dropdown</select>
+        
+      </div>
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="CEP" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="areaConstruida" class="form-label">Área Construída</label>
+      <div class="input-group">
+        <input formControlName="areaConstruida" id="areaConstruida" type="text" class="form-control"
+          aria-label="Text input with dropdown button">
+        <select formControlName="medidaAreaConstruida" class="btn btn-outline-secondary dropdown-toggle" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">Dropdown</select>
+        
+      </div>
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Logradouro" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="areaTerreno" class="form-label">Área Terreno</label>
+      <div class="input-group">
+        <input formControlName="areaTerreno" id="areaTerreno" type="text" class="form-control"
+          aria-label="Text input with dropdown button">
+        <select formControlName="medidaAreaTerreno" class="btn btn-outline-secondary dropdown-toggle" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">Dropdown</select>
+        
+      </div>
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Número" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="terrenoFrente" class="form-label">Terreno Frente</label>
+      <input formControlName="terrenoFrente" id="terrenoFrente" type="text" class="form-control"
+        placeholder="Terreno Frente" />
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Complemento" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+
+    <div class="col-md-4 col-sm-12">
+      <label for="terrenoFundos" class="form-label">Terreno Fundo</label>
+      <input formControlName="terrenoFundos" id="terrenoFundos" type="text" class="form-control"
+        placeholder="Terreno Fundo" />
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Estado" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="terrenoEsquerda" class="form-label">Terreno Esquerda</label>
+      <input formControlName="terrenoEsquerda" id="terrenoEsquerda" type="text" class="form-control"
+        placeholder="Terreno Esquerda" />
     </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Cidade" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-6">
-      <input type="text" class="form-control" placeholder="Bairro" />
-    </div>
-  </div>
-  <div class="row">
-    <h3>VALORES</h3>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Valor do imóvel" aria-label="Valor do imóvel"
-        aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="IPTU" aria-label="IPTU" aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Condomínio" aria-label="Condomínio"
-        aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Taxas" aria-label="Taxas" aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Observação sobre valores"
-        aria-label="Observação sobre valores" aria-describedby="basic-addon2" />
+    <div class="col-md-4 col-sm-12">
+      <label for="terrenoDireita" class="form-label">Terreno Direita</label>
+      <input formControlName="terrenoDireita" id="terrenoDireita" type="text" class="form-control"
+        placeholder="Terreno Direita" />
     </div>
   </div>
 
+  <hr>
   <div class="row">
-    <h3>MEDIDAS</h3>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Área total" aria-label="Área total"
-        aria-describedby="basic-addon2" />
+    <h5 class="h5">CARACTERÍSTICAS</h5>
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdDormitorios" type="number" class="form-label">Dormitórios</label>
+      <input formControlName="qtdDormitorios" id="qtdDormitorios" type="number" class="form-control"
+        placeholder="Dormitórios" />
     </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Área útil" aria-label="Área útil"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdSuites" class="form-label">Suítes</label>
+      <input formControlName="qtdSuites" id="qtdSuites" type="text" class="form-control" placeholder="Suítes" />
     </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Área construída" aria-label="Condomínio"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdBanheiros" class="form-label">Banheiros</label>
+      <input formControlName="qtdBanheiros" id="qtdBanheiros" type="text" class="form-control"
+        placeholder="Banheiros" />
     </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Área terreno" aria-label="Taxas"
-        aria-describedby="basic-addon2" />
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdGaragens" class="form-label">Vagas de garagem</label>
+      <input formControlName="qtdGaragens" id="qtdGaragens" type="text" class="form-control"
+        placeholder="Vagas de garagem" />
     </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Terreno Frente" />
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdSalas" class="form-label">Salas</label>
+      <input formControlName="qtdSalas" id="qtdSalas" type="text" class="form-control" placeholder="Salas" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="qtdAcomodacoes" class="form-label">Acomodações</label>
+      <input formControlName="qtdAcomodacoes" id="qtdAcomodacoes" type="text" class="form-control"
+        placeholder="Acomodações" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="mobiliado" class="form-label">Mobiliado</label>
+      <input formControlName="mobiliado" id="mobiliado" type="text" class="form-control" placeholder="Mobiliado" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="pavimento" class="form-label">Pavimento</label>
+      <input formControlName="pavimento" id="pavimento" type="text" class="form-control" placeholder="Pavimento" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="anoConstrucao" class="form-label">Ano construção</label>
+      <input formControlName="anoConstrucao" id="anoConstrucao" type="text" class="form-control"
+        placeholder="Ano construção" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="unidade" class="form-label">Unidade</label>
+      <input formControlName="unidade" id="unidade" type="text" class="form-control" placeholder="Unidade" />
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <label for="numAndar" class="form-label">Número Andar</label>
+      <input formControlName="numAndar" id="numAndar" type="text" class="form-control" placeholder="Número Andar" />
     </div>
 
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Terreno Fundo" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Terreno Esquerda" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Terreno Direita" />
+    <div class="col-md-2 col-sm-12">
+      <label for="permuta" class="form-label">Permuta</label>
+      <input formControlName="permuta" id="permuta" type="text" class="form-control" placeholder="Permuta" />
     </div>
   </div>
 
+  <hr>
   <div class="row">
-    <h3>CARACTERÍSTICAS</h3>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Dormitórios" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Suítes" aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Banheiros" aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Vagas de garagem" aria-describedby="basic-addon2" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Salas" />
-    </div>
+    <h5 class="h5">CARACTERÍSTICAS PERSONALIZADAS</h5>
+  </div>
 
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Acomodações" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Mobiliado" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Pavimento" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Ano construção" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Unidade" />
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Número Andar" />
-    </div>
-    
-    <div class="col-4">
-      <input type="text" class="form-control" placeholder="Permuta" />
-    </div>
-  </div>
+  <hr>
   <div class="row">
-    <h3>CARACTERÍSTICAS PERSONALIZADAS</h3>
+    <h5 class="h5">DESCRIÇÃO</h5>
+    <textarea formControlName="descricao" id="descricao" class="form-control" name="descricao" cols="30"
+      rows="10"></textarea>
   </div>
-  
+  <hr>
   <div class="row">
-    <h3>DESCRIÇÃO</h3>
-    <textarea name="descricao" id="descricao
-    " cols="30" rows="10"></textarea>
+    <h5 class="h5">OBSERVAÇÕES</h5>
+    <textarea formControlName="observacao" id="observacao" class="form-control" name="observacao" cols="30"
+      rows="10"></textarea>
   </div>
-  <div class="row">
-    <h3>OBSERVAÇÕES</h3>
-    <textarea name="descricao" id="descricao
-    " cols="30" rows="10"></textarea>
-  </div>
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-center align-items-center mt-5">
 
-    <button type="button" (click)="onSubmit()" class="btn btn-primary">CADASTRAR IMÓVEL</button>
+    <button (click)="onSubmit()" type="button" class="btn btn-primary">CADASTRAR IMÓVEL</button>
 
   </div>
 </form>
