@@ -1,0 +1,30 @@
+<p>imob-filtering works!</p>
+<div class="container">
+    <div class="filter">
+        <input type="text"  placeholder="Tipo">
+        <input type="text"  placeholder="Valor Mínimo">
+        <input type="text"  placeholder="Valor Máximo">
+        <input type="text"  placeholder="Bairro">
+        <input type="text"  placeholder="Imobiliária">
+        <input type="text"  placeholder="Descrição">
+    </div>
+
+    <div class="row">
+        <div *ngFor="let imovel of data" class="card mb-3" style="max-height: 250px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [src]="imovel['imagem']" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{imovel['tipo']}} - {{imovel['bairro']}}</h5>
+                  <h4 class="card-title">{{imovel['valor']}} - {{imovel['imobiliaria']}}</h4>
+                  <p class="card-text" [innerHTML]="imovel['descricao']"></p>
+                  <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+                  <a [href]="imovel['link_imovel']"  target="_blank">Open</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

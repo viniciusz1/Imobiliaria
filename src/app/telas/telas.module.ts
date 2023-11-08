@@ -7,6 +7,7 @@ import { ListaImovelComponent } from './lista-imovel/lista-imovel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbDropdown, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { ImobFilteringComponent } from './imob-filtering/imob-filtering.component';
 
 
 
@@ -15,7 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CadastroImovelComponent,
     CadastroClienteComponent,
     ListaClienteComponent,
-    ListaImovelComponent
+    ListaImovelComponent,
+    ImobFilteringComponent
   ],
   imports: [
     CommonModule,

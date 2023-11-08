@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TelasModule } from './telas/telas.module';
 import { HttpClientModule } from '@angular/common/http';
+// import { ImobFilterPipe } from './imob-filter.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // ImobFilterPipe
   ],
   imports: [
     BrowserModule,
