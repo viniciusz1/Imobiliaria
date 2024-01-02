@@ -7,6 +7,7 @@ import json from 'src/assets/itaivan_ec_pradi.json';
 })
 export class ImobFilteringComponent {
   data: any
+  filters: any = {};
   constructor(){
     this.data = json
     console.log(this.data)

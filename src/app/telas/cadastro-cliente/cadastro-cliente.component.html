@@ -1,1 +1,20 @@
-<p>cadastro-cliente works!</p>
+<form [formGroup]="pessoaForm" class="container">
+    <div class="row">
+        <h5 class="h5">PERFIL DE CADASTRO</h5>
+        <div class="col-md-6 col-sm-12 d-flex justify-content-between">
+            <div  class="checkbox-label" *ngFor="let tipo of tipoCadastro">
+                <label for="tipoCadastro">{{tipo}}</label>
+                <input type="checkbox" [name]="tipo" [id]="tipo">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="corretor" class="form-label">Corretor</label>
+            <input formControlName="corretor" id="corretor" type="text" class="form-control" placeholder="Corretor" />
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <label for="corretor" class="form-label">Corretor</label>
+            <input formControlName="corretor" id="corretor" type="text" class="form-control" placeholder="Corretor" />
+          </div>
+    </div>
+    <hr>
+</form>

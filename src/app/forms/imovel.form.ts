@@ -9,7 +9,7 @@ export let ImovelForm = new FormGroup({
     localizacao: new FormGroup({ 
         cep: new FormControl(''),
         logradouro: new FormControl(''),
-        numeroCasa: new FormControl(''), //Adicionar ao formulário
+        numero: new FormControl(''), //Adicionar ao formulário
         complemento: new FormControl(''),
         estado: new FormGroup({ nome: new FormControl('')}),
         cidade: new FormGroup({ nome: new FormControl('')}),
