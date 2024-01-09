@@ -1,0 +1,24 @@
+<div class="row  row-cols-2 g-2">
+    <div class="col" *ngFor="let imovel of filteredImoveis">
+      <div class="card p-0">
+        <div class="row g-0">
+          <div class="row col-md-5">
+            <img [src]="imovel['imagem']" class="img-fluid rounded-start p-0" alt="..."
+              style="width: 250px; height: 200px;">
+          </div>
+          <div class="row col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{imovel['tipo']}} - {{imovel['bairro']}}</h5>
+              <h4 class="card-title"><a [href]="imovel['link_imovel']" target="_blank">{{imovel['valor']}} - {{imovel['imobiliaria']}}</a></h4>
+              <p class="card-text mb-1">{{imovel['cidade']}}  {{'- ' + imovel['rua']}}</p>
+              <p class="card-text" [innerHTML]="imovel['descricao']"></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pageSize" [(page)]="page" [maxSize]="5"
+    (pageChange)="changedPage($event)"></ngb-pagination>

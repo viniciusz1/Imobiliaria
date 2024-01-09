@@ -1,0 +1,18 @@
+<form class="filter p-2 my-3 rounded" style="background-color: #eeeffa; border: 1px solid #d0d0d0;" novalidate [formGroup]="form">
+  <div class="d-flex gap-1 mb-1">
+    <input type="text" class="form-control" formControlName="tipo"  placeholder="Tipo">
+    <input type="text" class="form-control" formControlName="descricao"  placeholder="Descrição">
+    <input type="text" class="form-control" formControlName="rua"  placeholder="Rua (Funciona em poucos)">
+    <input type="text" class="form-control" formControlName="bairro"  placeholder="Bairro">
+    <input type="text" class="form-control" formControlName="cidade"  placeholder="Cidade">
+    <input type="text" class="form-control" formControlName="imobiliaria"  placeholder="Imobiliária">
+  </div>
+  <div class="d-flex gap-1 mb-1">
+    <input type="text" class="form-control" formControlName="minimo"  placeholder="Valor Mínimo (digite sem pontos ou vírgula)">
+    <input type="text" class="form-control" formControlName="maximo"  placeholder="Valor Máximo (digite sem pontos ou vírgula)">
+  </div>
+  <div class="w-100 d-flex justify-content-end">
+		<button class="btn btn-primary"(click)="search(form.value)">Search</button>
+
+  </div>
+</form>

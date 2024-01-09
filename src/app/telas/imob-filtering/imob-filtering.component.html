@@ -1,29 +1,5 @@
-<!-- <p>imob-filtering works!</p>
 <div class="container">
-    <div class="filter">
-        <input type="text" [(ngModel)]="filters.tipo"  placeholder="Tipo">
-        <input type="text" [(ngModel)]="filters.minimo"  placeholder="Valor Mínimo">
-        <input type="text" [(ngModel)]="filters.maximo"  placeholder="Valor Máximo">
-        <input type="text" [(ngModel)]="filters.bairro"  placeholder="Bairro">
-        <input type="text" [(ngModel)]="filters.imobiliaria"  placeholder="Imobiliária">
-        <input type="text" [(ngModel)]="filters.descricao"  placeholder="Descrição">
-    </div>
+  <app-search (groupFilters)="filters = $event"></app-search>
+  <app-card-list [groupFilters]="filters"  [searchByKeyword]="searchText"></app-card-list>
 
-    <div class="row">
-        <div *ngFor="let imovel of data | imobFilter:filters" class="card mb-3" style="max-height: 250px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img [src]="imovel['imagem']" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{imovel['tipo']}} - {{imovel['bairro']}}</h5>
-                  <h4 class="card-title">{{imovel['valor']}} - {{imovel['imobiliaria']}}</h4>
-                  <p class="card-text" [innerHTML]="imovel['descricao']"></p>
-                  <a [href]="imovel['link_imovel']"  target="_blank">Open</a>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-</div> -->
+</div>

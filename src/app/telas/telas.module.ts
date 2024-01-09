@@ -6,6 +6,7 @@ import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
 import { ListaImovelComponent } from './lista-imovel/lista-imovel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImobFilteringComponent } from './imob-filtering/imob-filtering.component';
+import { ImobFilterPipe } from './imob-filtering/imob-filter.pipe';
 import { CurrencyMaskConfig, CurrencyMaskModule, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
 import { NgxEditorModule } from 'ngx-editor';
 
@@ -26,7 +27,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     CadastroClienteComponent,
     ListaClienteComponent,
     ListaImovelComponent,
-    ImobFilteringComponent,
+    // ImobFilteringComponent,
     // ImobFilterPipe
   ],
   imports: [
